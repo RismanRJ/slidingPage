@@ -1,0 +1,176 @@
+@import "../bootstrap/scss/bootstrap.scss";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../img/event-bg-transformed.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+body::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(43, 5, 5, 0.223);
+}
+
+
+.form__container{
+    height: 500px;
+    width: 900px;
+    border: 1px solid black;
+    padding: 0;
+    position: relative;
+    z-index: 0;
+    position: fixed;
+    .box{
+        height: 500px;
+        width: 450px;
+        background-color: $danger;
+
+    }
+    .box1{
+        height: 500px;
+        position: relative;  
+        width: 450px;  
+        background-color: #fff;
+    }
+    .Btn{
+        align-self: center;  
+    }
+    &-title{
+        font-weight: 900;
+        
+    }
+    &-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+.login{
+    height: 100%;
+    width: 100%;
+    background-color: $primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     position: absolute;
+     left: 0px;
+     bottom: 500px;
+     z-index: 1;
+     transition-duration: 0.5s;
+}
+.signup{
+    height: 100%;
+    width: 100%;
+    background-color: $success;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    bottom: 500px;
+    z-index: -1;
+}
+
+.active{
+    position: absolute;
+    left:450px;
+    z-index: -1;
+}
+.signup_active{
+    display: flex;
+    position: absolute;
+    left: 450px;
+    z-index: 5;
+    transition-duration: 0.5s;
+}
+
+// Media screen
+
+@media screen and (max-width:992px) {
+    .form__container{
+        position: relative;
+        .box{
+            width:100%;
+            height: 150px;
+            background-color: $danger;
+             position: absolute;
+        top: 0;
+        z-index: 5;
+        }
+        .box1{
+            height: 350px;
+            width: 100%;
+          position: relative;
+            transition-duration: 0.5s;
+        }
+        
+    }
+    .loginBtnBox{
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+    .signinBtnBox{
+        position: absolute;
+        bottom: 150px;
+        z-index: 1;
+        
+    }
+    .login{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        transition-duration: 0.5s;
+        // display: none;
+    }
+    .signup{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        transition-duration: 0.5s;
+      
+    }
+    .active{
+        z-index: -1;
+        position: absolute;
+        display: flex;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        transition-duration: 0.5s;
+        
+    }
+    .signup_active{
+        position: absolute;
+        top: 150px;
+        left: 0;
+        z-index: 5;
+        transition-duration: 0.5s;
+    }
+}
